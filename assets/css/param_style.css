@@ -1,0 +1,71 @@
+/* Réinitialisation de styles */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    background-image: url('../../pictures/background-city.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Empêche le défilement de l'image */
+}   
+
+header {
+    color: white;
+    padding-top: 2.5vh;
+    margin-right:3vw;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.title{
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+}
+
+.title{
+    color: white;
+    font-size: 28px;
+}
+
+
+header nav ul {
+    padding-top:5.5vh;
+    list-style: none;
+    text-align: right;
+    margin-right:3vw;
+    float: right;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+main {
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    margin-top:50%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo{
+    margin-top:2.5vh;
+    margin-left:1vw;
+}

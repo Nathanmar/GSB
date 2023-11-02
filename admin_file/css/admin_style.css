@@ -1,0 +1,44 @@
+/* admin_style.css */
+
+/* Style de base */
+body {
+    background-color: #f0f0f0; /* Fond gris clair */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Colonne de navigation à gauche */
+.admin-sidebar {
+    width: 12vw; /* Largeur de la colonne de navigation en viewport width */
+    background-color: white; /* Fond blanc */
+    padding: 5vh; /* Marge intérieure en viewport height */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Ombre à gauche */
+    position: fixed;
+    height: 100vh; /* Hauteur en viewport height */
+}
+
+.admin-sidebar h2 {
+    margin-top: 0;
+}
+
+.admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 2vh; /* Marge bas en viewport height */
+}
+
+.admin-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Contenu principal */
+.admin-content {
+    margin-left: 35vw; /* Largeur de la colonne de navigation en viewport width */
+    padding: 5vh; /* Marge intérieure en viewport height */
+}

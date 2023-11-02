@@ -1,0 +1,146 @@
+/* Réinitialisation de styles */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    background-color:white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Empêche le défilement de l'image */
+}   
+
+
+
+header {
+    z-index:1;
+    background-image: url('../../pictures/header-background.jpg');
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    padding-bottom: 5vh;
+    padding-right:3vw;
+    margin-bottom: 5%;
+}
+
+h1{
+    padding-top: 5vh;
+    color: white;
+    margin-left: 2vw;
+}
+
+.title{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: right;
+    float: right;
+    margin-top:8vh;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 19px;
+}
+
+main {
+    text-align: start;
+    padding: 20px;
+}
+
+.search-bar {
+    text-align: start;
+    margin-left: 6vw;
+}
+
+.search-bar form {
+    display: inline-block;
+}
+
+.search-bar input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+}
+
+.city-details {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5vh;
+}
+
+.city-card {
+    background-size: cover;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 3.5vh;
+    min-width: 25vw;
+    max-width: 25vw;
+    min-height: 47vh;
+    max-height: 4vh;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-left: 2vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.city-card-content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.city-card-content h2 {
+    line-height: 130%;
+    min-height: 8%;
+    max-height: 8%;
+}
+
+.city-card-content p {
+    font-size: 19px;
+    align-self: flex-start;
+    margin-top: 43vh;
+    position: absolute;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    }
+
+.logo{
+    margin-top:5vh;
+    margin-left:2vw;
+}
+
+label{
+    margin-left:3vw;
+    transform: scale(1.5);
+    font-weight: bold;
+}
+
+.city-card a {
+    text-decoration: none;
+    color: white;
+}
