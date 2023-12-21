@@ -10,9 +10,9 @@
     <div class="admin-sidebar">
         <h2>Navigation</h2>
         <ul>
-            <li><a href="admin.php">    Accueil</a></li>
             <li><a href="map_admin.php">Map</a></li>
-            <li><a href="villes_admin.php">Villes</a></li>
+            <li><a href="villes_admin.php">Laboratoires</a></li>
+            <li><a href="contact_admin.php">Contact</a></li>
         </ul>
     </div>
 
@@ -37,13 +37,13 @@
                 echo "<thead>";
                 echo "<tr>";
                 echo "<th>id</th>";
-                echo "<th>name</th>";
+                echo "<th>Laboratoire</th>";
                 echo "<th>lat</th>";
                 echo "<th>lng</th>";
                 echo "</tr>";
                 echo "</thead>";
                 
-                // Afficher les données sans référence à city_id
+                // Afficher les données
                 echo "<tbody>";
                 foreach ($data as $row) {
                     echo "<tr>";

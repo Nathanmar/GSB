@@ -1,21 +1,18 @@
-/* admin_style.css */
 
-/* Style de base */
 body {
-    background-color: #f0f0f0; /* Fond gris clair */
+    background-color: #f0f0f0; 
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Colonne de navigation à gauche */
 .admin-sidebar {
-    width: 12vw; /* Largeur de la colonne de navigation en viewport width */
-    background-color: white; /* Fond blanc */
-    padding: 5vh; /* Marge intérieure en viewport height */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Ombre à gauche */
+    width: 12vw; 
+    background-color: white; 
+    padding: 5vh;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); 
     position: fixed;
-    height: 100vh; /* Hauteur en viewport height */
+    height: 100vh;
 }
 
 .admin-sidebar h2 {
@@ -28,7 +25,7 @@ body {
 }
 
 .admin-sidebar ul li {
-    margin-bottom: 2vh; /* Marge bas en viewport height */
+    margin-bottom: 2vh;
 }
 
 .admin-sidebar ul li a {
@@ -39,10 +36,32 @@ body {
 
 /* Contenu principal */
 .admin-content {
-    margin-left: 30vw; /* Largeur de la colonne de navigation en viewport width */
-    padding: 5vh; /* Marge intérieure en viewport height */
+    margin-left: 20vw; 
+    padding: 5vh; 
 }
 
+
+/* Style du tableau */
+table {
+    border-collapse: collapse; 
+    width: 100%;
+}
+
+
+td, th {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+}
+
+
+th {
+    background-color: #f2f2f2; 
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
 .fa-xmark{
     color:red;
@@ -62,6 +81,6 @@ body {
     color: white;
 }
 
-th{
-    margin-right:10vw;
+.editable{
+    width:20vw;
 }

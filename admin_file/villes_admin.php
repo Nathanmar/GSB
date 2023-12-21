@@ -11,34 +11,34 @@
         <!-- Colonne de navigation -->
         <h2>Navigation</h2>
         <ul>
-            <li><a href="admin.php">Accueil</a></li>
             <li><a href="map_admin.php">Map</a></li>
-            <li><a href="villes_admin.php">Villes</a></li>
+            <li><a href="villes_admin.php">Laboratoires</a></li>
+            <li><a href="contact_admin.php">Contact</a></li>
         </ul>
     </div>
 
     <div class="admin-content">
         <!-- Contenu principal -->
-        <h1>Page d'administration des villes</h1>
+        <h1>Page d'administration des laboratoires</h1>
 
         <!-- Tableau pour afficher les données -->
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Ville</th>
-                    <th>Pays</th>
+                    <th>Laboratoire</th>
+                    <th class="small-th">Pays</th>
                     <th>Description</th>
-                    <th>Image</th>
-                    <th>Actions</th>
+                    <th class="small-th">Image</th>
+                    <th>Liens</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                // Inclure le fichier de connexion
+                // fichier de connexion
                 require_once('../includes/connexion.php');
 
-                // Exécuter une requête SQL pour récupérer les données de la table "villes"
+                // requête SQL pour récupérer les données de la table "villes"
                 $query = "SELECT * FROM villes";
                 $stmt = $conn->prepare($query);
                 $stmt->execute();
@@ -60,6 +60,7 @@
                     echo "<td><input type='text' class='editable' value='" . $row['nom_pays'] . "' disabled></td>";
                     echo "<td><input type='text' class='editable' value='" . $row['description'] . "' disabled></td>";
                     echo "<td><input type='text' class='editable' value='" . $row['image'] . "' disabled></td>";
+                    echo "<td><input type='text' class='editable' value='" . $row['liens'] . "' disabled></td>";
                     echo "<td>";
                     echo "<form action='api/city_api.php' method='POST'>";
                     echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
@@ -75,13 +76,13 @@
                 ?>
             </tbody>    
         </table>
-        <button class="add_city" id="addCityButton" onclick="addcity()">Ajouter une ville <i class='fa-solid fa-plus'></i></button>
+        <button class="add_city" id="addCityButton" onclick="addcity()">Ajouter un laboratoire <i class='fa-solid fa-plus'></i></button>
 
         <!-- Formulaire pour ajouter une ville à la base de données -->
         <form  id="ajoutVilleForm" action="api/city_api.php" style="display:none;" method="POST">
         <input type="hidden" name="action" value="ajouter"> <!-- Action d'ajout -->
             <h2>Ajouter une nouvelle ville</h2>
-            <label for="nouvelle_ville">Ville:</label>
+            <label for="nouvelle_ville">Laboratoire:</label>
             <input type="text" name="nouvelle_ville" id="nouvelle_ville" required>
             
             <label for="nouveau_pays">Pays:</label>
@@ -91,7 +92,10 @@
             <input name="nouvelle_description" id="nouvelle_description" required>
             
             <label for="nouvelle_image">Image:</label>
-            <input type="text" name="nouvelle_image" id="nouvelle_image" required>
+            <input type="file" name="nouvelle_image" id="nouvelle_image" accept="image/*" required>
+
+            <label for="nouveaux_liens">Lien:</label>
+            <input type="text" name="nouveaux_liens" id="nouveaux_liens" required>
             
             <!-- Bouton pour soumettre le formulaire -->
             <button class="add_city" type="submit">Valider <i class='fa-solid fa-plus'></i></button>
@@ -104,6 +108,7 @@
             <input type="hidden" id="nomPaysField" name="nouveau_pays" value="">
             <input type="hidden" id="descriptionField" name="nouvelle_description" value="">
             <input type="hidden" id="imageField" name="nouvelle_image" value="">
+            <input type="hidden" id="liensField" name="nouveaux_liens" value="">
         </form>
     </div>
 
@@ -145,11 +150,13 @@
             var nomPaysField = document.getElementById('nomPaysField');
             var descriptionField = document.getElementById('descriptionField');
             var imageField = document.getElementById('imageField');
+            var liensField = document.getElementById('liensField');
 
             nomVilleField.value = editableCells[0].value;
             nomPaysField.value = editableCells[1].value;
             descriptionField.value = editableCells[2].value;
             imageField.value = editableCells[3].value;
+            liensField.value = editableCells[4].value;
 
             // Mettez à jour les champs cachés du formulaire
             document.getElementById('idField').value = id;

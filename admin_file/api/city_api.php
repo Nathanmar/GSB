@@ -13,11 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $nom_pays = $_POST['nouveau_pays'];
                 $description = $_POST['nouvelle_description'];
                 $image = $_POST['nouvelle_image'];
+                $liens = $_POST['nouveaux_liens'];
 
                 // Exécutez une requête SQL pour insérer les données dans la table "villes"
-                $query = "INSERT INTO villes (nom_ville, nom_pays, description, image) VALUES (?, ?, ?, ?)";
+                $query = "INSERT INTO villes (nom_ville, nom_pays, description, image, liens) VALUES (?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($query);
-                $stmt->execute([$nom_ville, $nom_pays, $description, $image]);
+                $stmt->execute([$nom_ville, $nom_pays, $description, $image, $liens]);
+
+                
                 break;
 
             case 'supprimer':
@@ -39,11 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $nom_pays = $_POST['nouveau_pays'];
                     $description = $_POST['nouvelle_description'];
                     $image = $_POST['nouvelle_image'];
+                    $liens = $_POST['nouveaux_liens'];
     
                     // Exécutez une requête SQL pour mettre à jour la ligne dans la table "villes"
-                    $query = "UPDATE villes SET nom_ville = ?, nom_pays = ?, description = ?, image = ? WHERE id = ?";
+                    $query = "UPDATE villes SET nom_ville = ?, nom_pays = ?, description = ?, image = ? , liens = ? WHERE id = ?";
                     $stmt = $conn->prepare($query);
-                    $stmt->execute([$nom_ville, $nom_pays, $description, $image, $id]);
+                    $stmt->execute([$nom_ville, $nom_pays, $description, $image, $liens, $id]);
                 break;
 
             default:

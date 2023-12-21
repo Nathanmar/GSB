@@ -1,21 +1,19 @@
-/* admin_style.css */
 
-/* Style de base */
 body {
-    background-color: #f0f0f0; /* Fond gris clair */
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Colonne de navigation à gauche */
+
 .admin-sidebar {
-    width: 12vw; /* Largeur de la colonne de navigation en viewport width */
-    background-color: white; /* Fond blanc */
-    padding: 5vh; /* Marge intérieure en viewport height */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Ombre à gauche */
+    width: 12vw;
+    background-color: white; 
+    padding: 5vh; 
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    height: 100vh; /* Hauteur en viewport height */
+    height: 100vh;
 }
 
 .admin-sidebar h2 {
@@ -28,7 +26,7 @@ body {
 }
 
 .admin-sidebar ul li {
-    margin-bottom: 2vh; /* Marge bas en viewport height */
+    margin-bottom: 2vh;
 }
 
 .admin-sidebar ul li a {
@@ -39,33 +37,34 @@ body {
 
 /* Contenu principal */
 .admin-content {
-    margin-left: 20vw; /* Largeur de la colonne de navigation en viewport width */
-    padding: 5vh; /* Marge intérieure en viewport height */
+    margin-left: 20vw;
+    padding: 5vh; 
 }
 
-/* Dans votre fichier CSS (admin_villes_style.css) */
 
-/* Style du tableau */
+
 table {
-    border-collapse: collapse; /* Fusionner les bordures pour un look de tableau */
-    width: 100%; /* Largeur totale du tableau */
+    border-collapse: collapse; 
+    width: 100%; 
 }
 
-/* Style des cellules de tableau (td) et des en-têtes de colonne (th) */
 td, th {
-    border: 1px solid #ddd; /* Bordure de 1 pixel solide avec une couleur grise (#ddd) */
-    padding: 8px; /* Espace interne autour du contenu de la cellule */
-    text-align: left; /* Alignement du texte à gauche */
+    border: 1px solid #ddd;
+    padding: 8px; 
 }
 
-/* Style des en-têtes de colonne (th) */
+
+.small-th{
+    max-width:50%;
+}
+
 th {
-    background-color: #f2f2f2; /* Couleur de fond gris clair pour les en-têtes de colonne */
+    background-color: #f2f2f2; 
 }
 
-/* Style des lignes alternées pour une meilleure lisibilité */
+
 tr:nth-child(even) {
-    background-color: #f2f2f2; /* Couleur de fond gris clair pour les lignes paires */
+    background-color: #f2f2f2;
 }
 
 .fa-xmark{
@@ -84,4 +83,8 @@ tr:nth-child(even) {
     margin-top:2vh;
     background-color:green;
     color: white;
+}
+
+.editable{
+    width:10vw;
 }

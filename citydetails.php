@@ -16,7 +16,11 @@ if (isset($_GET['id'])) {
         $nomVille = $result['nom_ville'];
         $nomPays = $result['nom_pays'];
         $images = explode(',', $result['image']);
-        $deuxiemeImage = $images[1];
+        if (count($images) > 1) {
+            $deuxiemeImage = $images[1];
+        } else {
+            $deuxiemeImage = 'assets/pictures/adn.jpg';
+        }
     } else {
         // Gérez le cas où aucune ville n'a été trouvée avec cet ID
         echo "Aucune ville trouvée avec l'ID $cityId";
@@ -39,7 +43,7 @@ if (isset($_GET['id'])) {
 <body>
 <header style="background-image: url('<?php echo $deuxiemeImage; ?>');">
         <nav>
-        <img src="pictures/logo.jpg" alt="Logo" class="logo">
+        <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="villes">Villes</a></li>
@@ -59,7 +63,7 @@ if (isset($_GET['id'])) {
     </main>
     
     <footer>
-        <p>&copy; 2023 UrbanVenture. Tous droits réservés.</p>
+        <p>&copy; 2023 GSB. Tous droits réservés.</p>
     </footer>
 </body>
 </html>

@@ -1,0 +1,138 @@
+
+body {
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.admin-sidebar {
+    width: 12vw; 
+    background-color: white; 
+    padding: 5vh;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    height: 100vh;
+}
+
+.admin-sidebar h2 {
+    margin-top: 0;
+}
+
+.admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 2vh;
+}
+
+.admin-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Contenu principal */
+.admin-content {
+    margin-left: 20vw; 
+    padding: 5vh; 
+}
+
+
+/* Ajoutez ces styles à votre fichier style.css ou adaptez-les selon vos besoins */
+
+body {
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.admin-sidebar {
+    width: 12vw; 
+    background-color: white; 
+    padding: 5vh;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    height: 100vh;
+}
+
+.admin-sidebar h2 {
+    margin-top: 0;
+}
+
+.admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 2vh;
+}
+
+.admin-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Contenu principal */
+.admin-content {
+    margin-left: 20vw; 
+    padding: 5vh; 
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.contact-table th, .contact-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.contact-table th {
+    background-color: #f2f2f2;
+}
+
+#message-container {
+    display: none;
+    margin-top: 20px;
+}
+
+#message-container h2 {
+    color: #333;
+}
+
+#message-content {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+.contact-row:hover,
+.contact-row.active-hover {
+    background-color: #e0e0e0; 
+    cursor: pointer;
+}
+
+
+.contact-row.read {
+    background-color: #f0f0f0;
+}
+
+
+.delete-icon {
+    cursor: pointer;
+    color: #ff5050;
+}
+
+.delete-icon:hover {
+    color: #e00000;
+}

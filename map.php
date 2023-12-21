@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <title>UrbanVenture - Explorer les villes du monde</title>
+    <title>GSB - Explorer les villes du monde</title>
 </head>
 <body>
     <div class="shadow-gradient"></div>
     <header>
         <nav>
-            <img src="pictures/logo.jpg" alt="Logo" class="logo">
+            <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
             <div class=pin-container>
             <input type="text" id="citySearch" class="citySearch" placeholder="Rechercher un laboratoire" list="citySuggestions" />
             <datalist id="citySuggestions"></datalist>
@@ -24,7 +24,7 @@
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="villes">Villes</a></li>
                 <li><a href="map">Map</a></li>
-                <li><a href="info">À Propos</a></li>
+                <li><a href="info">Paramètres</a></li>
                 <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
@@ -32,7 +32,6 @@
     
     <main>
         <div id="map"></div>
-        <div id="map" style="height: 400px;"></div>
     </main>
     <script>
     var map = L.map('map', {
@@ -79,7 +78,7 @@
         });
     </script>
     <footer>
-        <p>&copy; 2023 UrbanVenture. Tous droits réservés.</p>
+        <p>&copy; 2023 GSB. Tous droits réservés.</p>
     </footer>
 </body>
 </html>

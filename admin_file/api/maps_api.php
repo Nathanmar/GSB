@@ -13,14 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $lat = $_POST['nouvelle_lat'];
                 $lng = $_POST['nouvelle_lng'];
 
-                // Exécutez une requête SQL pour insérer les données dans la table "villes"
+                // Exécute une requête SQL pour insérer les données dans la table "villes"
                 $query = "INSERT INTO maps ( name, lat, lng) VALUES ( ?, ?, ?)";
                 $stmt = $conn->prepare($query);
                 $stmt->execute([ $name, $lat, $lng]);
                 break;
 
             case 'supprimer':
-                // Récupérez    'ID de la ligne à supprimer
+                // Récupérez l'ID de la ligne à supprimer
                 if (isset($_POST['id'])) {
                     $id = $_POST['id'];
 
@@ -32,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
 
                 case 'modifier':
-                    // Récupérez les données du formulaire caché
+                    // Récupere les données du formulaire caché
                     $id = $_POST['id'];
                     $name = $_POST['nouveau_name'];
                     $lat = $_POST['nouvelle_lat'];
                     $lng = $_POST['nouvelle_lng'];
     
-                    // Exécutez une requête SQL pour mettre à jour la ligne dans la table "villes"
+                    // Exécute une requête SQL pour mettre à jour la ligne dans la table "villes"
                     $query = "UPDATE maps SET name = ?, lat = ?, lng = ? WHERE id = ?";
                     $stmt = $conn->prepare($query);
                     $stmt->execute([$name, $lat, $lng, $id]);
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
         }
 
-        // Redirigez l'utilisateur vers la page d'administration des villes après l'action
+        // Redirige l'utilisateur vers la page d'administration des villes après l'action
         header("Location: ../map_admin.php");
     } else {
         echo "Action non spécifiée.";

@@ -1,10 +1,9 @@
 <?php
 // process_login.php
 
-// Inclure le fichier de connexion à la base de données
-require_once('includes/connexion.php');
 
-// Récupérer les données du formulaire
+require_once('connexion.php');
+
 $pseudo = $_POST['pseudo'];
 $mot_de_passe = $_POST['mot_de_passe'];
 
@@ -25,7 +24,7 @@ if ($user) {
         $_SESSION['role'] = $user['role']; // Stockez le rôle de l'utilisateur dans la session
 
         // Le mot de passe est correct, vous pouvez rediriger l'utilisateur vers la page d'accueil sécurisée
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     } else {
         // Le mot de passe est incorrect, affichez un message d'erreur
@@ -42,7 +41,7 @@ if ($user) {
     
     if ($stmt->execute()) {
         // Utilisateur ajouté avec succès, redirigez-le vers la page d'accueil sécurisée
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     } else {
         // Erreur lors de l'ajout de l'utilisateur

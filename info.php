@@ -22,7 +22,7 @@ if (isset($_SESSION['pseudo'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/param_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>UrbanVenture - Explorer les villes du monde</title>
+    <title>GSB partners</title>
 </head>
 <body>
     <header>
@@ -31,7 +31,7 @@ if (isset($_SESSION['pseudo'])) {
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="villes">Villes</a></li>
                 <li><a href="map">Map</a></li>
-                <li><a href="info">À Propos</a></li>
+                <li><a href="info">Paramètres</a></li>
                 <li><a href="contact">Contact</a></li>
             </ul>
         </nav>
@@ -41,16 +41,20 @@ if (isset($_SESSION['pseudo'])) {
         <h1>Paramètres</h1>
         <?php
         // Affichez le pseudo de l'utilisateur connecté
-        echo "Connecté en tant que : " . $pseudo;
+        echo "<p class='user-info'>Connecté en tant que : " . $pseudo . "</p>";
         if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             // L'utilisateur a le rôle "admin", affichez le bouton d'administration
-            echo '<a href="admin_file/admin.php" class="admin-button">Accéder à la page administrateur</a>';
+            echo '<a href="admin_file/map_admin.php" class="admin-button" target="_blank">Accéder à la page administrateur</a>';
         }
         ?>
+
+        <form method="post" action="includes/process_logout.php">
+            <input type="submit" name="logout" value="Se déconnecter" class="logout-button">
+        </form>
     </main>
     
     <footer>
-        <p>&copy; 2023 UrbanVenture. Tous droits réservés.</p>
+        <p>&copy; 2023 GSB. Tous droits réservés.</p>
     </footer>
 </body>
 </html>

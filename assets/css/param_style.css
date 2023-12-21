@@ -1,4 +1,4 @@
-/* Réinitialisation de styles */
+
 *{
     margin: 0;
     padding: 0;
@@ -8,18 +8,16 @@
 body {
     font-family: 'Quicksand', sans-serif;
     line-height: 1.6;
-    background-image: url('../../pictures/background-city.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Empêche le défilement de l'image */
+    background-color: #f4f4f4;
+
 }   
 
 header {
-    color: white;
-    padding-top: 2.5vh;
-    margin-right:3vw;
-    margin-bottom: 5%;
-    width: 100%;
+    z-index:1;
+    background-image: url('../../assets/pictures/header-background.jpg');
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    padding-bottom: 31.42vh;
 }
 
 .title{
@@ -34,10 +32,10 @@ header {
 
 
 header nav ul {
-    padding-top:5.5vh;
+    padding-top:8.05vh;
     list-style: none;
     text-align: right;
-    margin-right:3vw;
+    margin-right:2.1vw;
     float: right;
 }
 
@@ -52,20 +50,74 @@ header nav a {
     font-weight: bold;
     font-size: 19px;
 }
-main {
-    margin: 0 auto;
-    text-align: center;
-}
 
 footer {
-    margin-top:50%;
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
-}
+    padding: 20px 0;
+    padding-top: 10px;
+    }
 
 .logo{
     margin-top:2.5vh;
     margin-left:1vw;
+}
+
+main {
+    height:63vh;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    margin-top: 19vh;
+    margin-bottom: 1vh;
+    font-size: 18px;
+    color: #555;
+}
+
+.admin-button {
+    margin-left:0.5vw;
+    display: inline-block;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logout-button {
+    display: inline-block;
+    background-color: #e74c3c; /* Couleur rouge pour le bouton de déconnexion */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c0392b; /* Couleur rouge plus sombre au survol */
+}
+
+.admin-button:hover {
+    background-color: #45a049;
+}
+
+footer p {
+    margin-top: 20px;
 }

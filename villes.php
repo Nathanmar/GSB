@@ -13,18 +13,18 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/city_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>UrbanVenture - Explorer les villes du monde</title>
+    <title>GSB - Explorer les villes du monde</title>
 </head>
 <body>
     <div class="shadow-gradient"></div>
     <header>
         <nav>
-        <img src="pictures/logo.jpg" alt="Logo" class="logo">
+        <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="villes">Villes</a></li>
                 <li><a href="map">Map</a></li>
-                <li><a href="info">À Propos</a></li>
+                <li><a href="info">Paramètres</a></li>
                 <li><a href="contact">Contact</a></li>
             </ul>   
         </nav>
@@ -32,7 +32,7 @@ $result = $conn->query($sql);
     </header>
     <div class="search-bar">
             <form action="" method="GET">
-                <input type="text" name="search" placeholder="Rechercher une ville ou un pays" class="search-input">
+                <input type="text" name="search" placeholder="Rechercher un laboratoire" class="search-input" autocomplete="off">
             </form>
         </div>
     <main>
@@ -41,8 +41,8 @@ $result = $conn->query($sql);
                 while ($row = $result->fetch()) {
                     $images = explode(',', $row['image']);
                     $premiereimage = $images[0];
-                    echo '<div class="city-card" style="background-image: url(' . $premiereimage . ');" data-id="' . $row['id'] . '">';
-                    echo '<a href="citydetails.php?id=' . $row['id'] . '">';
+                    echo '<div class="city-card" style="background-image: url(assets/pictures/' . $premiereimage . ');" data-id="' . $row['id'] . '">';
+                    echo '<a href="' . $row['liens'] . '" target="_blank">';
                     echo '<div class="city-card-content">';
                     echo '<h2>' . $row['nom_ville'] ."," . '</h2>';
                     echo '<h2>' . $row['nom_pays'] . '</h2>';
@@ -50,6 +50,9 @@ $result = $conn->query($sql);
                     echo '</div>';
                     echo '</a>';
                     echo '</div>';
+                    echo '<script>';
+                    echo 'console.log(' . json_encode($row) . ');';
+                    echo '</script>';
                 }
             ?>
         </section>
@@ -77,52 +80,9 @@ $result = $conn->query($sql);
             });
         });
 
-        // Nouvelle fonction pour trier les villes
-        function sortCities() {
-            const sortByPriceCheckbox = document.getElementById('sortByPrice');
-            const sortByPopularityCheckbox = document.getElementById('sortByPopularity');
-            const sortByProximityCheckbox = document.getElementById('sortByProximity');
-
-            const citiesArray = Array.from(cityCards); // Convertissez les cartes de ville en un tableau
-
-            if (sortByPriceCheckbox.checked) {
-                citiesArray.sort(function (a, b) {
-                    // Vous devrez implémenter votre propre logique de tri par prix ici
-                    // a et b représentent deux cartes de ville à comparer
-                    // Triez-les en fonction du prix et renvoyez 1, -1 ou 0 en conséquence
-                });
-            } else if (sortByPopularityCheckbox.checked) {
-                citiesArray.sort(function (a, b) {
-                    // Vous devrez implémenter votre propre logique de tri par popularité ici
-                    // a et b représentent deux cartes de ville à comparer
-                    // Triez-les en fonction de la popularité et renvoyez 1, -1 ou 0 en conséquence
-                });
-            } else if (sortByProximityCheckbox.checked) {
-                citiesArray.sort(function (a, b) {
-                    // Vous devrez implémenter votre propre logique de tri par proximité ici
-                    // a et b représentent deux cartes de ville à comparer
-                    // Triez-les en fonction de la proximité et renvoyez 1, -1 ou 0 en conséquence
-                });
-            }
-
-            // Réinsérez les cartes triées dans la section city-details
-            const cityDetails = document.querySelector('.city-details');
-            cityDetails.innerHTML = ''; // Effacez les cartes actuelles
-
-            citiesArray.forEach(function (card) {
-                cityDetails.appendChild(card); // Réinsérez les cartes triées
-            });
-        }
-
-        // Écoutez les événements "change" sur les cases à cocher de tri
-        document.getElementById('sortByPrice').addEventListener('change', sortCities);
-        document.getElementById('sortByPopularity').addEventListener('change', sortCities);
-        document.getElementById('sortByProximity').addEventListener('change', sortCities);
-
     </script>
-    
     <footer>
-        <p>&copy; 2023 UrbanVenture. Tous droits réservés.</p>
+        <p>&copy; 2023 GSB. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
