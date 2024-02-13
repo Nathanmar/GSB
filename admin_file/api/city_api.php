@@ -9,16 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         switch ($action) {
             case 'ajouter':
                 // Récupérez les données du formulaire
-                $nom_ville = $_POST['nouvelle_ville'];
+                $nom_laboratoire = $_POST['nouvelle_ville'];
                 $nom_pays = $_POST['nouveau_pays'];
+                $adresse = $_POST['nouvelle_adresse'];
                 $description = $_POST['nouvelle_description'];
                 $image = $_POST['nouvelle_image'];
                 $liens = $_POST['nouveaux_liens'];
 
                 // Exécutez une requête SQL pour insérer les données dans la table "villes"
-                $query = "INSERT INTO villes (nom_ville, nom_pays, description, image, liens) VALUES (?, ?, ?, ?, ?)";
+                $query = "INSERT INTO villes (nom_laboratoire, nom_pays, adresse, description, image, liens) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($query);
-                $stmt->execute([$nom_ville, $nom_pays, $description, $image, $liens]);
+                $stmt->execute([$nom_laboratoire, $nom_pays, $adresse, $description, $image, $liens]);
 
                 
                 break;
@@ -38,16 +39,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'modifier':
                     // Récupérez les données du formulaire caché
                     $id = $_POST['id'];
-                    $nom_ville = $_POST['nouvelle_ville'];
+                    $nom_laboratoire = $_POST['nouvelle_ville'];
                     $nom_pays = $_POST['nouveau_pays'];
+                    $adresse = $_POST['nouvelle_adresse'];
                     $description = $_POST['nouvelle_description'];
                     $image = $_POST['nouvelle_image'];
                     $liens = $_POST['nouveaux_liens'];
     
                     // Exécutez une requête SQL pour mettre à jour la ligne dans la table "villes"
-                    $query = "UPDATE villes SET nom_ville = ?, nom_pays = ?, description = ?, image = ? , liens = ? WHERE id = ?";
+                    $query = "UPDATE villes SET nom_laboratoire = ?, nom_pays = ?, adresse= ?, description = ?, image = ? , liens = ? WHERE id = ?";
                     $stmt = $conn->prepare($query);
-                    $stmt->execute([$nom_ville, $nom_pays, $description, $image, $liens, $id]);
+                    $stmt->execute([$nom_laboratoire, $nom_pays, $adresse, $description, $image, $liens, $id]);
                 break;
 
             default:

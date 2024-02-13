@@ -26,13 +26,16 @@ if (isset($_SESSION['pseudo'])) {
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="villes">Villes</a></li>
-                <li><a href="map">Map</a></li>
-                <li><a href="info">Paramètres</a></li>
-                <li><a href="contact">Contact</a></li>
+    <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+        <nav id="nav-bar">
+            <ul class="menu">
+                <li class="nav-link"><a href="index.php">Accueil</a></li>
+                <li class="nav-link"><a href="villes">Partenaires</a></li>
+                <li class="nav-link"><a href="map">Map</a></li>
+                <li class="nav-link"><a href="info">Paramètres</a></li>
+                <li class="nav-link"><a href="contact">Contact</a></li>
             </ul>
         </nav>
     </header>

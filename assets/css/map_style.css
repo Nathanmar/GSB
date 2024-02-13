@@ -14,6 +14,10 @@ body {
     background-attachment: fixed; /* Empêche le défilement de l'image */
 }   
 
+.menu-btn{
+    display:none;
+}
+
 header {
     position: absolute;
     color: white;
@@ -140,4 +144,200 @@ datalist {
 datalist option {
     padding: 8px;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .citySearch {
+        margin-top:1.8vh;
+        margin-left:10vw;
+        z-index: 2;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 40vw; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+@media (max-width: 595px) {
+
+    .citySearch {
+        width: 45vw; 
+        margin-left:3vw;
+        margin-top: 1.2vh;
+    }
+
+    header {
+        margin-top:-9.4vh;
+        padding-bottom: 4vh;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        display: block;
+        text-align: center;
+        padding-top: 2vh;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 0;
+    }
+
+    header nav a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .menu-btn:checked~nav .menu {
+        margin-top: 65px;
+    }
+
+
+    .h1top{
+        color: white;
+        margin-top: -20vh;
+        margin-left: 24vw ;
+        font-size: 23px;
+    }
+
+    .imgtop{
+        display: none;
+    }
+
+    .logo{
+        max-width: 15vw;
+        margin-top:4vh;
+        margin-left:2vw;
+    }
+
+      /* Hamburger menu button */
+
+    .menu-btn {
+        display: none;
+    }
+    
+    .menu-icon {
+        display: inline-block;
+        position: relative;
+        top:86px;
+        left: 380px;
+        cursor: pointer;
+        padding: 24px 14px;
+        z-index: 1;
+    }
+    
+    .navicon {
+        background-color: #fffdfd;
+        display: block;
+        height: 3px;
+        width: 26px;
+        position: relative;
+        transition: 0.3192s ease-in-out;
+    }
+    
+    .navicon:before,
+    .navicon:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: #ffffff;
+        transition: 0.3192s ease-in-out;
+    }
+    
+    .navicon:before {
+        top: 9px;
+    }
+    
+    .navicon:after {
+        bottom: 9px;
+    }
+    
+    /* Hamburger Menu Animation Start */
+    
+    .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+        bottom: 0;
+    }
+    
+    .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+        transition: 0.3192s ease-in-out;
+    }
+    
+    /* Hide blue background on hamburger menu tap on some mobile devices */
+    
+    .menu-icon,
+    .menu-btn,
+    .navicon {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Nav items */
+    
+    .menu {
+        background-color: #eeeeee;
+        width: 100%;
+        height: auto;
+        list-style-type: none;
+        position: absolute;
+        top: 16.5vh;
+        left: 0;
+        right: 0;
+        margin-top: 65px;
+        padding: 0;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3192s ease-in-out, opacity 0.3192s ease-in-out;
+    }
+    
+    
+    .menu-btn:checked~nav .menu {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.3192s ease-in-out, opacity 0.3192s ease-in-out;
+    }
+    
+    .menu li {
+        border-top: 1px solid #c7c7c7;
+        padding: 10px 0;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .menu a {
+        color: #222222;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    
+    .menu-btn:checked~nav .menu a,
+    .menu-btn:checked~nav .menu li {
+        opacity: 1;
+        transition: 0.3192s ease-in-out;
+    }
+
 }

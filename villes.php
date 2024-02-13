@@ -18,17 +18,19 @@ $result = $conn->query($sql);
 <body>
     <div class="shadow-gradient"></div>
     <header>
-        <nav>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+        <nav id="nav-bar">
         <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="villes">Villes</a></li>
-                <li><a href="map">Map</a></li>
-                <li><a href="info">Paramètres</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>   
+            <ul class="menu">
+                <li class="nav-link"><a href="index.php">Accueil</a></li>
+                <li class="nav-link"><a href="villes">Partenaires</a></li>
+                <li class="nav-link"><a href="map">Map</a></li>
+                <li class="nav-link"><a href="info">Paramètres</a></li>
+                <li class="nav-link"><a href="contact">Contact</a></li>
+            </ul>
         </nav>
-        <h1>Nos partenaires</h1>
+        <h1 class="h1top">Nos partenaires</h1>
     </header>
     <div class="search-bar">
             <form action="" method="GET">
@@ -44,7 +46,7 @@ $result = $conn->query($sql);
                     echo '<div class="city-card" style="background-image: url(assets/pictures/' . $premiereimage . ');" data-id="' . $row['id'] . '">';
                     echo '<a href="' . $row['liens'] . '" target="_blank">';
                     echo '<div class="city-card-content">';
-                    echo '<h2>' . $row['nom_ville'] ."," . '</h2>';
+                    echo '<h2>' . $row['nom_laboratoire'] ."," . '</h2>';
                     echo '<h2>' . $row['nom_pays'] . '</h2>';
                     echo '<p>' . $row['description'] . '</p>';
                     echo '</div>';

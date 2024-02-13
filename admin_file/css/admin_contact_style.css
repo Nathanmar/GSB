@@ -53,14 +53,14 @@ body {
 .admin-sidebar {
     width: 12vw; 
     background-color: white; 
-    padding: 5vh;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); 
     position: fixed;
     height: 100vh;
 }
 
-.admin-sidebar h2 {
+.admin-sidebar img {
     margin-top: 0;
+    margin-bottom: 3vh;
 }
 
 .admin-sidebar ul {
@@ -69,7 +69,7 @@ body {
 }
 
 .admin-sidebar ul li {
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
 }
 
 .admin-sidebar ul li a {
@@ -135,4 +135,40 @@ body {
 
 .delete-icon:hover {
     color: #e00000;
+}
+
+@media screen and (max-width: 1000px) {
+    .admin-content {
+        margin-left: 0;
+    }
+
+    /* Admin Sidebar devient horizontale en haut de l'écran */
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        padding: 2vh;
+        position: static;
+        box-shadow: none;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .admin-sidebar img {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .admin-sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 2vh;
+    }
+
+    .admin-sidebar ul li {
+        margin-bottom: 0;
+    }
 }

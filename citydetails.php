@@ -6,14 +6,14 @@ if (isset($_GET['id'])) {
     $cityId = $_GET['id'];
 
     // Effectuez une requête SQL pour récupérer le nom de la ville et du pays en fonction de l'ID
-    $sql = "SELECT nom_ville, nom_pays, image FROM villes WHERE id = :cityId";
+    $sql = "SELECT nom_laboratoire, nom_pays, image FROM villes WHERE id = :cityId";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':cityId', $cityId, PDO::PARAM_INT);
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($result) {
-        $nomVille = $result['nom_ville'];
+        $nomVille = $result['nom_laboratoire'];
         $nomPays = $result['nom_pays'];
         $images = explode(',', $result['image']);
         if (count($images) > 1) {

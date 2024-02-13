@@ -11,7 +11,7 @@
 <body>
     <div class="admin-sidebar">
         <!-- Colonne de navigation -->
-        <h2>Navigation</h2>
+        <img src="../assets/pictures/logo.jpg" alt="">
         <ul>
             <li><a href="map_admin.php">Map</a></li>
             <li><a href="villes_admin.php">Laboratoires</a></li>
