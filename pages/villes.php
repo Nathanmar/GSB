@@ -1,6 +1,6 @@
 <?php 
 
-require_once('includes/connexion.php');
+require_once('../includes/connexion.php');
 
 $sql = "SELECT * FROM villes";
 $result = $conn->query($sql);
@@ -11,7 +11,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/city_style.css">
+    <link rel="stylesheet" href="../assets/css/city_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>GSB - Explorer les villes du monde</title>
 </head>
@@ -21,7 +21,7 @@ $result = $conn->query($sql);
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <nav id="nav-bar">
-        <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+        <img src="../assets/pictures/logo.jpg" alt="Logo" class="logo">
             <ul class="menu">
                 <li class="nav-link"><a href="index.php">Accueil</a></li>
                 <li class="nav-link"><a href="villes">Partenaires</a></li>
@@ -43,7 +43,7 @@ $result = $conn->query($sql);
                 while ($row = $result->fetch()) {
                     $images = explode(',', $row['image']);
                     $premiereimage = $images[0];
-                    echo '<div class="city-card" style="background-image: url(assets/pictures/' . $premiereimage . ');" data-id="' . $row['id'] . '">';
+                    echo '<div class="city-card" style="background-image: url(../assets/pictures/' . $premiereimage . ');" data-id="' . $row['id'] . '">';
                     echo '<a href="' . $row['liens'] . '" target="_blank">';
                     echo '<div class="city-card-content">';
                     echo '<h2>' . $row['nom_laboratoire'] ."," . '</h2>';

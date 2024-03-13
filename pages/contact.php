@@ -2,7 +2,7 @@
 // contact.php
 
 // Incluez le fichier de connexion à la base de données
-require_once('includes/connexion.php');
+require_once('../includes/connexion.php');
 
 // Vérifiez si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/contact_style.css">
+    <link rel="stylesheet" href="../assets/css/contact_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>GSB</title>
 </head>
 <body>
     <header>
-        <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+        <img src="../assets/pictures/logo.jpg" alt="Logo" class="logo">
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <nav id="nav-bar">

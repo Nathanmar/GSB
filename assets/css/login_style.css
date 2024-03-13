@@ -75,6 +75,17 @@ h2 {
 .form-group {
     margin-bottom: 15px;
 }
+
+.stay-connected {
+    display: flex; /* Utiliser flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Pour aligner les éléments verticalement au centre */
+}
+
+.stay-connected input[type="checkbox"] {
+    max-width: 25px;
+    margin-bottom: 5px;
+}
+
 .change-btn{
     color: rgb(0, 145, 255);
     text-decoration: underline;

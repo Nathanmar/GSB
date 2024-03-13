@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/map_style.css">
+    <link rel="stylesheet" href="../assets/css/map_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -16,7 +16,7 @@
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <nav id="nav-bar">
-            <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+            <img src="../assets/pictures/logo.jpg" alt="Logo" class="logo">
             <div class=pin-container>
             <input type="text" id="citySearch" class="citySearch" placeholder="Rechercher un laboratoire" list="citySuggestions" />
             <datalist id="citySuggestions"></datalist>
@@ -46,7 +46,7 @@
     }).addTo(map);
 
     var cities = <?php
-        require_once("includes/connexion.php");
+        require_once("../includes/connexion.php");
 
         $query = $conn->prepare("SELECT name, lat, lng FROM maps");
         $query->execute();

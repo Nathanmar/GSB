@@ -6,4 +6,11 @@ try {
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
 }
+
+session_start();
+
+if (isset($_COOKIE['pseudo']) && isset($_COOKIE['role'])) {
+    $_SESSION['pseudo'] = $_COOKIE['pseudo'];
+    $_SESSION['role'] = $_COOKIE['role'];
+}
 ?>

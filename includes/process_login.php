@@ -23,8 +23,12 @@ if ($user) {
         $_SESSION['pseudo'] = $pseudo; // Stockez le pseudo de l'utilisateur dans la session
         $_SESSION['role'] = $user['role']; // Stockez le rôle de l'utilisateur dans la session
 
+        if (isset($_POST['rester_connecte']) && $_POST['rester_connecte'] == 'on') {
+            setcookie('pseudo', $pseudo, time() + 30 * 24 * 60 * 60, '/');
+            setcookie('role', $user['role'], time() + 30 * 24 * 60 * 60, '/');
+        }
         // Le mot de passe est correct, vous pouvez rediriger l'utilisateur vers la page d'accueil sécurisée
-        header('Location: ../index.php');
+        header('Location: ../pages/index.php');
         exit();
     } else {
         // Le mot de passe est incorrect, affichez un message d'erreur
@@ -41,7 +45,7 @@ if ($user) {
     
     if ($stmt->execute()) {
         // Utilisateur ajouté avec succès, redirigez-le vers la page d'accueil sécurisée
-        header('Location: ../index.php');
+        header('Location: ../pages/index.php');
         exit();
     } else {
         // Erreur lors de l'ajout de l'utilisateur

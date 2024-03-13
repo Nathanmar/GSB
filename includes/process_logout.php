@@ -15,11 +15,15 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_POST['logout'])) {
+
+    setcookie('pseudo', '', time() - 3600, '/');
+    setcookie('role', '', time() - 3600, '/');
+    
     session_start(); // Démarrez la session si elle n'est pas déjà démarrée
     session_destroy(); // Détruisez toutes les données de session
 
     // Rediriger vers la page de connexion
-    header('Location: ../login.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 

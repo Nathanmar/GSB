@@ -20,13 +20,13 @@ if (isset($_SESSION['pseudo'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/param_style.css">
+    <link rel="stylesheet" href="../assets/css/param_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>GSB partners</title>
 </head>
 <body>
     <header>
-    <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+    <img src="../assets/pictures/logo.jpg" alt="Logo" class="logo">
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <nav id="nav-bar">
@@ -47,11 +47,11 @@ if (isset($_SESSION['pseudo'])) {
         echo "<p class='user-info'>Connecté en tant que : " . $pseudo . "</p>";
         if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             // L'utilisateur a le rôle "admin", affichez le bouton d'administration
-            echo '<a href="admin_file/map_admin.php" class="admin-button" target="_blank">Accéder à la page administrateur</a>';
+            echo '<a href="../admin_file/map_admin.php" class="admin-button" target="_blank">Accéder à la page administrateur</a>';
         }
         ?>
 
-        <form method="post" action="includes/process_logout.php">
+        <form method="post" action="../includes/process_logout.php">
             <input type="submit" name="logout" value="Se déconnecter" class="logout-button">
         </form>
     </main>

@@ -30,7 +30,7 @@ if ($user) {
         
         if ($stmt->execute()) {
             // Utilisateur ajouté avec succès, redirigez-le vers la page d'accueil sécurisée
-            header('Location: ../index.php');
+            header('Location: ../pages/index.php');
             exit();
         } else {
             // Erreur lors de l'ajout de l'utilisateur

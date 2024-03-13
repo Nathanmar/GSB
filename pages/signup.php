@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/login_style.css">
+    <link rel="stylesheet" href="../assets/css/login_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>Connexion - GSB</title>
 </head>
 <body>
     <header>
-        <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+        <img src="../assets/pictures/logo.jpg" alt="Logo" class="logo">
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <nav id="nav-bar">
@@ -26,7 +26,7 @@
     <main>
         <div class="login-form">
             <h2>Créer un compte</h2>
-            <form action="includes/process_signup.php" method="POST" onsubmit="return checkPasswords()">
+            <form action="../includes/process_signup.php" method="POST" onsubmit="return checkPasswords()">
                 <div class="form-group">
                     <label for="nouveau_pseudo">Nom d'utilisateur :</label>
                     <input type="text" id="nouveau_pseudo" name="nouveau_pseudo" required autocomplete="off">

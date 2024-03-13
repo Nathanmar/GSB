@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/login_style.css">
+    <link rel="stylesheet" href="../assets/css/login_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>Connexion - GSB</title>
 </head>
 <body>
     <header>
-        <img src="assets/pictures/logo.jpg" alt="Logo" class="logo">
+        <img src="../assets/pictures/logo.jpg" alt="Logo" class="logo">
         <input type="checkbox" class="menu-btn" id="menu-btn">
         <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
         <nav id="nav-bar">
@@ -26,10 +26,10 @@
     <main>
         <div class="login-form">
             <h2>Connexion</h2>
-            <form action="includes/process_login.php" method="POST">
+            <form action="../includes/process_login.php" method="POST">
                 <div class="form-group">
-                    <label for="pseudo">Nom d'utilisateur :</label>
-                    <input type="text" id="pseudo" name="pseudo" required autocomplete="off">
+                    <label for="pseudo">Adresse email :</label>
+                    <input type="email" id="pseudo" name="pseudo" required autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="mot_de_passe">Mot de passe :</label>
@@ -37,6 +37,10 @@
                 </div>
                 <div class="form-group">
                     <button type="submit">Se connecter</button>
+                </div>
+                <div class="form-group stay-connected">
+                    <input type="checkbox" id="rester_connecte" name="rester_connecte">
+                    <label for="rester_connecte">Rester connecté</label>
                 </div>
             </form>
         </div>
